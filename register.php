@@ -56,7 +56,7 @@
                                 'token' => $token));
             $user_id = $bdd->lastInsertId();
             $ip = $_SERVER['SERVER_NAME'];           
-            mail($_POST['mail'], 'Confirmation de votre compte', "Cliquez sur ce lien pour valider votre compte\n\n<a href='http://".$ip.":3000/confirm.php?id=$user_id&token=$token' target='_blank'>click here</a>");
+            mail($_POST['mail'], 'Confirmation de votre compte', "Cliquez sur ce lien pour valider votre compte\n\nhttp://".$ip.":3000/confirm.php?id=$user_id&token=$token");
             $_SESSION['flash']['success'] = 'Un email de confirmation vous a été envoyé pour valider votre compte';
             header('Location: login.php');
         }

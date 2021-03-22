@@ -82,9 +82,12 @@ document.getElementById("save").addEventListener("click", function (e) {
         "Content-type": "application/x-www-form-urlencoded",
       },
       body: data,
-    }).catch(function (err) {
-      console.error(err);
-    });
+    })
+      .then((res) => res.text())
+      .then(console.log)
+      .catch(function (err) {
+        console.error(err);
+      });
   }
 });
 
